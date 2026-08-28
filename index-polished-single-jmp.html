@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genaro Basulto — Economics</title>
+<meta name="description" content="Genaro Basulto, PhD Candidate in Economics at Carnegie Mellon University's Tepper School of Business. Industrial Organization, Digital Economics, Applied Microeconomics, and Competition Policy.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:      #1E1E1E;
+    --text:     #2B2B2B;
+    --muted:    #6B6B6B;
+    --line:     #DDDDDD;
+    --bg:       #FFFFFF;
+    --bg-soft:  #FAFAF9;
+    --accent:   #6E2C2C;
+    --link:     #1F5F85;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --maxw: 800px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: var(--serif);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: #B9CBD6;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  header.topbar {
+    border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,0.97);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+  .topbar-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .topbar-inner .site-name {
+    font-size: 1.02rem;
+    font-weight: 600;
+  }
+  nav.top-nav {
+    font-family: var(--sans);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  nav.top-nav a {
+    font-size: 0.84rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  nav.top-nav a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+
+  .menu-toggle { display: none; }
+
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 62px 24px 100px;
+  }
+
+  section { scroll-margin-top: 76px; }
+  section + section {
+    margin-top: 56px;
+    padding-top: 44px;
+    border-top: 1px solid var(--line);
+  }
+
+  .kicker {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 9px;
+    display: block;
+  }
+
+  .hero-top {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .avatar-placeholder, .avatar-img {
+    width: 112px;
+    height: 112px;
+    border-radius: 2px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+  }
+  .avatar-placeholder {
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--muted);
+  }
+  .hero-text h1 {
+    font-size: 2.05rem;
+    line-height: 1.12;
+    margin-bottom: 7px;
+  }
+  .hero-text .role {
+    font-family: var(--sans);
+    font-size: 0.93rem;
+    color: var(--text);
+  }
+  .hero-text .role .inst { color: var(--muted); }
+  .hero-text .fields {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin-top: 11px;
+  }
+
+  .hero-summary {
+    margin: 26px 0 0;
+    font-size: 1.02rem;
+    color: var(--text);
+    max-width: 720px;
+  }
+
+  .jmp-note {
+    margin-top: 28px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    font-family: var(--sans);
+  }
+
+  .jmp-feature {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+  }
+  .jmp-note .kicker { margin-bottom: 6px; }
+  .jmp-note .jmp-title {
+    font-family: var(--serif);
+    font-size: 1.10rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .jmp-note .jmp-links {
+    margin-top: 8px;
+    font-size: 0.86rem;
+  }
+  .jmp-note .jmp-links a { margin-right: 18px; }
+
+  h2.section-title {
+    font-size: 1.32rem;
+    margin-bottom: 24px;
+  }
+  h3.subhead {
+    font-family: var(--sans);
+    font-size: 0.77rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin: 32px 0 14px;
+    font-weight: 600;
+  }
+  h3.subhead:first-of-type { margin-top: 0; }
+
+  .group-label {
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 24px 0 8px;
+  }
+  .group-label:first-of-type { margin-top: 4px; }
+
+  .paper {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .paper:last-child { border-bottom: none; }
+  .paper h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .paper-actions {
+    font-family: var(--sans);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 0.84rem;
+    margin: 8px 0 4px;
+  }
+  .abstract-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: #B9CBD6;
+    text-underline-offset: 2px;
+    cursor: pointer;
+  }
+  .abstract-toggle:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+  .paper-actions .links { margin-top: 0; }
+  .paper p.abstract { display: none; }
+  .paper.expanded p.abstract { display: block; }
+  .paper .coauthors,
+  .paper .status {
+    font-family: var(--sans);
+    font-size: 0.83rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .paper p.abstract {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin: 10px 0 2px;
+  }
+  .paper .links {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    margin-top: 6px;
+  }
+  .paper .links a { margin-right: 16px; }
+  .draft-flag {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: italic;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .vita-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.94rem;
+  }
+  .vita-row:last-child { border-bottom: none; }
+  .vita-row .year {
+    font-family: var(--sans);
+    color: var(--muted);
+    white-space: nowrap;
+    font-size: 0.86rem;
+  }
+
+  .committee-list { margin-top: 8px; }
+  .committee-list .member {
+    font-size: 0.94rem;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .committee-list .member:last-child { border-bottom: none; }
+  .committee-list .member .rel {
+    font-family: var(--sans);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .program-note {
+    margin-top: 17px;
+    padding: 15px 17px;
+    border-left: 3px solid var(--accent);
+    background: var(--bg-soft);
+    font-size: 0.92rem;
+  }
+  .program-note strong { color: var(--ink); }
+
+  .references-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .reference-card {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .reference-card:last-child { border-bottom: none; }
+  .reference-card .name {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .reference-card .title {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .reference-card .email {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    margin-top: 4px;
+  }
+
+  .cv-download {
+    font-family: var(--sans);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid var(--line);
+    padding: 20px 24px;
+    max-width: 520px;
+  }
+  .cv-download .btn {
+    display: inline-block;
+    margin-top: 6px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 7px 16px;
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+  .cv-download .btn:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .contact-grid {
+    font-family: var(--sans);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 34px;
+    margin-top: 8px;
+  }
+  .contact-item .label {
+    font-size: 0.71rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .contact-item .value,
+  .contact-item a {
+    font-size: 0.94rem;
+    font-family: var(--serif);
+  }
+
+  footer.site-footer {
+    font-family: var(--sans);
+    margin-top: 60px;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    .topbar-inner { padding: 14px 18px; }
+    main { padding: 44px 18px 80px; }
+    section + section { margin-top: 44px; padding-top: 34px; }
+    .hero-top { flex-direction: column; gap: 17px; }
+    .hero-text h1 { font-size: 1.85rem; }
+    nav.top-nav { display: none; }
+    .menu-toggle {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.80rem;
+      background: none;
+      border: 1px solid var(--line);
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    nav.top-nav.open {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .contact-grid { grid-template-columns: 1fr; }
+    .vita-row { align-items: flex-start; }
+  }
+
+  /* Extra breathing room inside the highlighted Job Market Paper box */
+  .jmp-note.paper {
+    padding-left: 24px;
+    padding-right: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="site-name">Genaro Basulto</span>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="topNav">Menu</button>
+      <nav class="top-nav" id="topNav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#jmp">JMP</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching &amp; Vita</a>
+        <a href="#references">References</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="home">
+      <div class="hero-top">
+        <img src="headshot.jpg" alt="Genaro Basulto" class="avatar-img">
+        <div class="hero-text">
+          <h1>Genaro Basulto</h1>
+          <div class="role">PhD Candidate, Economics — <span class="inst">Carnegie Mellon University, Tepper School of Business</span></div>
+          <div class="fields">Industrial Organization · Digital Economics · Applied Microeconomics · Competition Policy</div>
+        </div>
+      </div>
+
+      <p class="hero-summary">
+        My research is in industrial organization and applied microeconomics, with a focus on digital markets and competition policy. I study how platform design, ranking algorithms, search frictions, and vertical integration shape firm behavior, market competition, and consumer welfare.
+      </p>
+
+      <div class="jmp-note paper jmp-feature" id="jmp">
+        <span class="kicker">Job Market Paper</span>
+        <div class="jmp-title">Algorithmic Ranking and Delivery Foreclosure in Retail Platforms: Evidence from Amazon and Mercado Libre</div>
+        <div class="paper-actions">
+          <button class="abstract-toggle" type="button" aria-expanded="false">Abstract</button>
+          <div class="links"><a href="https://drive.google.com/file/d/11BshEqdVHu--sbG7_zvW-ngFk5WBDCoZ/view?usp=drive_link" target="_blank" rel="noopener">Latest version</a></div>
+        </div>
+        <p class="abstract">
+          Retail platforms act as gatekeepers between consumers and sellers through ranking algorithms, and many vertically integrate into delivery services such as Fulfilled by Amazon, creating an incentive to favor sellers who adopt these services in rankings. This paper estimates how this practice affects prices, delivery adoption, and welfare, separating algorithmic bias from consumers' valuation of integrated delivery, and shows how both ranking regulation and competition between platforms constrain self-preferencing.
+        Using a novel panel of more than 415,000 product-seller-time observations from Amazon and Mercado Libre, Mexico's two largest retail platforms, I estimate a structural model of consumers' platform choice and search with frictions, platforms' ranking and delivery-pricing decisions, and sellers' pricing and delivery choices.
+        Integrated delivery is higher quality than third-party alternatives but about 84% more expensive. Products using FBA or Full receive systematically better rankings: FBA moves products up about 4 positions on Amazon and Full about 6 positions on Mercado Libre relative to comparable products using third-party delivery.
+        Counterfactual simulations show that preventing platforms from favoring their integrated delivery services in rankings reduces integrated delivery adoption by roughly 5% on both platforms and lowers prices, generating a 4.56% increase in total surplus in the full platform equilibrium. The effects are asymmetric: Amazon's consumer surplus rises by 12.09% and its market share by 18.60%, while Mercado Libre's consumer surplus rises by 2.10% and its market share falls by 14.34%.
+        A second counterfactual shows that competition itself disciplines self-preferencing: removing Mercado Libre's competitive constraint lowers total surplus by 4.43% and Amazon consumer surplus by 16.72%.
+        </p>
+      </div>
+
+    </section>
+
+    
+
+    <section id="research">
+      <span class="kicker">Research</span>
+      <h2 class="section-title">Working Papers &amp; Publications</h2>
+
+      <h3 class="subhead">Working Papers</h3>
+
+      <div class="paper">
+        <h4>Platforms as Search Technologies: Seller Selection and Price Spillovers</h4>
+        <span class="coauthors">Joint with Aniko Öry</span>
+        <div class="paper-actions">
+          <button class="abstract-toggle" type="button" aria-expanded="false">Abstract</button>
+          <div class="links"><a href="https://drive.google.com/file/d/1gLCZafdvCW1HwMNfqtkjI3IX32y0Lx5E/view?usp=drive_link" target="_blank" rel="noopener">Latest version</a></div>
+        </div>
+        <p class="abstract">
+          We study a market in which producers sell their products both through a platform and through a direct channel, and set prices on both channels simultaneously. Off-platform, consumers engage in costly sequential search. The platform improves consumer-seller matching but weakens price competition by concentrating consumer attention. Consumers decide whether to join based on the expected utility gain from improved matching, while sellers decide whether to list based on the incremental profit from platform sales net of diverted off-platform demand. We study platform fee design and then extend the framework to competition between two symmetric platforms, highlighting tensions between participation, pricing, producer surplus, and consumer welfare.
+        </p>
+      </div>
+
+      <div class="paper">
+        <h4>Keynesian Search in Stochastic Overlapping Generations Models</h4>
+        <span class="coauthors">Joint with Parand Akbari, Eunsik Kim, and Stephen Spear</span>
+        <span class="status">Revise &amp; Resubmit — American Economic Journal: Macroeconomics</span>
+        <div class="paper-actions">
+          <button class="abstract-toggle" type="button" aria-expanded="false">Abstract</button>
+          <div class="links"><a href="https://drive.google.com/file/d/1DiJJVQceiojimVQFaQR-lKB_Sdr3zJYc/view?usp=drive_link" target="_blank" rel="noopener">Latest version</a></div>
+        </div>
+        <p class="abstract">
+          We study how beliefs about future wealth are disciplined in a stochastic overlapping generations economy with incomplete labor markets and Keynesian search in the tradition of Roger Farmer. We show that rational expectations must reproduce the endogenous wealth distribution, disciplining an otherwise indeterminate steady state. We calibrate a 58-period lifecycle economy with dual labor markets and matching-efficiency shocks, solve it using a neural network, and recover equilibrium expectations.
+        </p>
+      </div>
+
+      <div class="paper">
+        <h4>Strategic Pricing and Adoption Dynamics for Hydrogen Mobility Technologies</h4>
+        <span class="coauthors">Joint with Alan Montgomery and Aniko Öry</span>
+        <div class="paper-actions">
+          <button class="abstract-toggle" type="button" aria-expanded="false">Abstract</button>
+          <div class="links"><a href="https://drive.google.com/file/d/1GDp9fobRK4XP5gGdRUvAv6LbQeUWoMke/view?usp=drive_link" target="_blank" rel="noopener">Latest version</a></div>
+        </div>
+        <p class="abstract">
+          This paper develops a dynamic model of technology adoption under uncertainty and network effects, focusing on how a hydrogen supplier decides when to enter markets and how to price and design contracts for heterogeneous trucking customers. We calibrate the model using New York Advanced Clean Fleets reporting data and Bizminer industry profiles of New York trucking operators. We use the model to study subsidies for station construction and customer adoption costs and to compare personalized contracts with single-price benchmarks.
+        </p>
+      </div>
+
+      <div class="paper">
+        <h4>Getting Sales from Rankings and Other Observable Information on Platform Markets</h4>
+        <span class="coauthors">Solo-authored</span>
+        <div class="paper-actions">
+          <button class="abstract-toggle" type="button" aria-expanded="false">Abstract</button>
+        </div>
+        <p class="abstract">Working paper in progress.</p>
+      </div>
+
+      <h3 class="subhead">Publications</h3>
+
+      <div class="paper">
+        <h4>Bargaining Dynamics and CEO Pay under Fat-Tailed Firm Distributions</h4>
+        <span class="coauthors">with Sonia Di Giannatale and Itza Tlaloc Quetzalcoatl Curiel-Cabral — <em>Studies in Nonlinear Dynamics &amp; Econometrics</em> (2026)</span>
+        <div class="links"><a href="https://doi.org/10.1515/snde-2026-0029" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+
+      <div class="paper">
+        <h4>The Dynamics of Bargaining Power in a Principal-Agent Model</h4>
+        <span class="coauthors">with Sonia Di Giannatale and Itza Tlaloc Quetzalcoatl Curiel-Cabral — <em>Mathematical Social Sciences</em>, 138, Article 102452 (2025)</span>
+        <div class="links"><a href="https://doi.org/10.1016/j.mathsocsci.2025.102452" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+
+      <div class="paper">
+        <h4>The Globalizability of Temporal Discounting</h4>
+        <span class="coauthors">with Rugeri Kai and others — <em>Nature Human Behaviour</em> 6.10 (2022): 1386–1397</span>
+        <div class="links"><a href="https://doi.org/10.1038/s41562-022-01392-w" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+
+      <h3 class="subhead">Other Writing</h3>
+      <div class="paper">
+        <h4>Data on Internet Platforms</h4>
+        <span class="coauthors">with Aniko Öry — CMU Center for Intelligent Business (2024)</span>
+        <div class="links"><a href="https://www.cmu.edu/intelligentbusiness/expertise/data-on-internet-platforms-aniko-ory-and-genaro-basulto.pdf" target="_blank" rel="noopener">Read</a></div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <span class="kicker">Teaching &amp; Vita</span>
+      <h3 class="subhead">Teaching Experience</h3>
+
+      <div class="group-label">Carnegie Mellon University</div>
+      <div class="vita-row"><span>Instructor, Principles of Microeconomics</span><span class="year">2026</span></div>
+      <div class="vita-row"><span>TA, Advanced Computational Methods</span><span class="year">2026</span></div>
+      <div class="vita-row"><span>TA, Managerial Economics</span><span class="year">2023, 2026</span></div>
+      <div class="vita-row"><span>TA, Regression Analysis</span><span class="year">2024</span></div>
+      <div class="vita-row"><span>TA, Intermediate Microeconomics</span><span class="year">2023–2026</span></div>
+      <div class="vita-row"><span>TA, Statistical Decision Making</span><span class="year">2023, 2024</span></div>
+      <div class="vita-row"><span>TA, Microeconomics I (PhD)</span><span class="year">2023, 2024</span></div>
+
+      <div class="group-label">Centro de Investigación y Docencia Económicas (CIDE)</div>
+      <div class="vita-row"><span>TA, Dynamic Methods for Economics</span><span class="year">2021</span></div>
+      <div class="vita-row"><span>TA, Microeconomics I</span><span class="year">2021</span></div>
+
+      <div class="group-label">Future Faculty Program, Carnegie Mellon University — In progress</div>
+      <div class="vita-row">
+        Professional development through the Eberly Center for Teaching Excellence &amp; Educational Innovation, including individualized teaching consultation, classroom observation and feedback, and development of a teaching statement.
+      </div>
+
+      <h3 class="subhead">Fellowships &amp; Awards</h3>
+      <div class="vita-row"><span>PNC Presidential Fellowship Award</span><span class="year">2026</span></div>
+      <div class="vita-row"><span>Air Liquide Research Grant</span><span class="year">2024–2026</span></div>
+      <div class="vita-row"><span>William Larimer Mellon Fellowship</span><span class="year">2022–2026</span></div>
+
+      <h3 class="subhead">Research &amp; Professional Positions</h3>
+      <div class="vita-row"><span>Carnegie Mellon University — Research Project with Air Liquide</span><span class="year">2024–2026</span></div>
+      <div class="vita-row"><span>Carnegie Mellon University — Research Assistant to Stephen Spear</span><span class="year">2023–2025</span></div>
+      <div class="vita-row"><span>Carnegie Mellon University — Research Assistant to Anh Nguyen</span><span class="year">2023</span></div>
+      <div class="vita-row"><span>CIDE — Research Assistant to Sonia Di Giannatale</span><span class="year">2022</span></div>
+      <div class="vita-row"><span>Student Organizer — Conference on AI and Human Decisions</span><span class="year">2026</span></div>
+
+      <h3 class="subhead">Conferences &amp; Talks</h3>
+      <div class="vita-row"><span>Marvin-Goodfriend Seminar Series (CMU) — presented JMP</span><span class="year">2025</span></div>
+      <div class="vita-row"><span>CIDE Seminar — scheduled talk on JMP</span><span class="year">Fall 2026</span></div>
+      <div class="vita-row"><span>CMU Energy Week - presented Strategic Pricing and Adoption Dynamics for Hydrogen Mobility Technologies</span><span class="year">2026</span></div>
+      <div class="vita-row"><span>XXIV SAET Conference — presented Keynesian Search in Stochastic Overlapping Generations Models</span><span class="year">2025</span></div>
+
+      <h3 class="subhead">Referee Work</h3>
+      <div class="vita-row"><span>Quantitative Marketing and Economics; Review of Development Economics</span><span class="year">2026</span></div>
+
+      <h3 class="subhead">Dissertation Committee</h3>
+      <div class="committee-list">
+        <div class="member">Aniko Öry <span class="rel">— Chair</span></div>
+        <div class="member">Anh Nguyen <span class="rel">— Committee member</span></div>
+        <div class="member">Maryam Saeedi <span class="rel">— Committee member</span></div>
+        <div class="member">Alan Montgomery <span class="rel">— Committee member</span></div>
+        <div class="member">Minkyung Kim <span class="rel">— External reader</span></div>
+      </div>
+    </section>
+
+    <section id="references">
+      <span class="kicker">References</span>
+      <h2 class="section-title">Academic References</h2>
+      <div class="references-grid">
+        <div class="reference-card">
+          <div class="name">Aniko Öry</div>
+          <div class="title">Associate Professor of Economics, Tepper School of Business, Carnegie Mellon University · Dissertation Advisor</div>
+          <div class="email"><a href="mailto:aoery@andrew.cmu.edu">aoery@andrew.cmu.edu</a></div>
+        </div>
+        <div class="reference-card">
+          <div class="name">Stephen Spear</div>
+          <div class="title">Professor of Economics, Tepper School of Business, Carnegie Mellon University</div>
+          <div class="email"><a href="mailto:ss1f@andrew.cmu.edu">ss1f@andrew.cmu.edu</a></div>
+        </div>
+        <div class="reference-card">
+          <div class="name">Maryam Saeedi</div>
+          <div class="title">Associate Professor of Economics, Tepper School of Business, Carnegie Mellon University</div>
+          <div class="email"><a href="mailto:msaeedi@andrew.cmu.edu">msaeedi@andrew.cmu.edu</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <span class="kicker">Curriculum Vitae</span>
+      <h2 class="section-title">Full CV</h2>
+      <div class="cv-download">
+        <div>
+          <div style="font-size:0.98rem; margin-bottom:2px;">Genaro Basulto — CV (PDF)</div>
+          <div style="font-size:0.80rem; color:var(--muted); margin-bottom:10px;">Updated August 2026</div>
+          <a class="btn" href="https://drive.google.com/file/d/1BaFfr4_UYDhFEipJkd77gjVT61Q4YfaR/view?usp=drive_link" target="_blank" rel="noopener">View CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <span class="kicker">Contact</span>
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="label">Email</span>
+          <a href="mailto:gbasulto@andrew.cmu.edu">gbasulto@andrew.cmu.edu</a>
+        </div>
+        <div class="contact-item">
+          <span class="label">Institution</span>
+          <span class="value">Tepper School of Business, Carnegie Mellon University</span>
+        </div>
+        <div class="contact-item">
+          <span class="label">Address</span>
+          <span class="value">5000 Forbes Ave, Pittsburgh, PA 15213</span>
+        </div>
+        <div class="contact-item">
+          <span class="label">Job Market</span>
+          <span class="value">Economics Job Market Candidate, 2026–27</span>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        © 2026 Genaro Basulto · Carnegie Mellon University · Built for the 2026–27 economics job market.
+      </footer>
+    </section>
+
+  </main>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const topNav = document.getElementById('topNav');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = topNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  topNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      topNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.querySelectorAll('.abstract-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const paper = btn.closest('.paper');
+      const expanded = paper.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', expanded);
+      btn.textContent = expanded ? 'Hide abstract' : 'Abstract';
+    });
+  });
+</script>
+
+</body>
+</html>
